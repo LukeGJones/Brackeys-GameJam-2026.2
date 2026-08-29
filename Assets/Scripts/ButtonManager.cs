@@ -94,14 +94,20 @@ public class ButtonManager : MonoBehaviour
 
     void Start()
     {
-        musicSlider.value = musicVolume;
-        sfxSlider.value = sfxVolume;
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            musicSlider.value = musicVolume;
+            sfxSlider.value = sfxVolume;
+        }
     }
 
     void Update()
     {
-        musicVolume = musicSlider.value;
-        sfxVolume = sfxSlider.value;
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            musicVolume = musicSlider.value;
+            sfxVolume = sfxSlider.value;
+        }
 
         if(Finish.furthestLevel > 1 && SceneManager.GetActiveScene().name == "MainMenu")
         {

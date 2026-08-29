@@ -17,9 +17,11 @@ public class player : MonoBehaviour
     private Rigidbody2D rb;
     private ParticleSystem deathExplosion;
     private SpriteRenderer sprite;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool audioPlayed;
+    public AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         MoveAction.Enable();
         JumpAction.Enable();
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +38,10 @@ public class player : MonoBehaviour
         }
         if(isDead == true)
         {
+            if(audioPlayed == false){
+                audioSource.PlayOneShot(audioSource.clip, ButtonManager.sfxVolume * 0.25f);
+                audioPlayed = true;
+            }
             sprite.enabled = false;
             if(deathAnimDone == false){
                 deathExplosion.Play();

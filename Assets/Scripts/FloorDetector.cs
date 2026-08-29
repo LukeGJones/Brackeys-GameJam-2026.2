@@ -3,7 +3,7 @@ using UnityEngine;
 public class FloorDetector : MonoBehaviour
 {
     public bool isGrounded;
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.transform.CompareTag("ground"))
         {
