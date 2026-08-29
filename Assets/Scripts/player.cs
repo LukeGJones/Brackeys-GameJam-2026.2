@@ -1,8 +1,6 @@
 using System.Data.Common;
 using System.Runtime.InteropServices.WindowsRuntime;
 using NUnit.Framework;
-using UnityEditor.Callbacks;
-using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class player : MonoBehaviour

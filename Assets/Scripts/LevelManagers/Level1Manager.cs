@@ -14,7 +14,7 @@ public class Level1Manager : MonoBehaviour
     void Update()
     {
         if(DropAwayDetector.GetComponent<DetectorScipt>().playerDetected == true){
-            DropAway.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -7));
+            DropAway.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -50) * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
 }

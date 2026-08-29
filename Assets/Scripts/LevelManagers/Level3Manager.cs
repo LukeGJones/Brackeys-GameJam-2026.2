@@ -14,7 +14,7 @@ public class Level3Manager : MonoBehaviour
     void Update()
     {
         if(SpikesDetector.GetComponent<DetectorScipt>().playerDetected == true){
-            Spikes.transform.position = Vector2.Lerp(Spikes.transform.position, new Vector3(Spikes.transform.position.x, -3.25f), 0.01f);
+            Spikes.transform.position = Vector2.Lerp(Spikes.transform.position, new Vector3(Spikes.transform.position.x, -3.25f), 8f * Time.deltaTime);
         }
     }
 }
