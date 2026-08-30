@@ -92,11 +92,15 @@ public class ButtonManager : MonoBehaviour
         Finish.furthestLevel = 1;
     }
 
+    public void Mute()
+    {
+        
+    }
+
     void Start()
     {
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
-            musicSlider.value = musicVolume;
             sfxSlider.value = sfxVolume;
         }
     }
@@ -105,7 +109,6 @@ public class ButtonManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
-            musicVolume = musicSlider.value;
             sfxVolume = sfxSlider.value;
         }
 
